@@ -1,0 +1,94 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: caramellatte --default;
+}
+
+@theme inline {
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  --spacing-jq-xs: 4px;
+  --spacing-jq-sm: 8px;
+  --spacing-jq-md: 16px;
+  --spacing-jq-lg: 24px;
+  --spacing-jq-xl: 32px;
+}
+
+:root {
+  --jq-space-xs: 4px;
+  --jq-space-sm: 8px;
+  --jq-space-md: 16px;
+  --jq-space-lg: 24px;
+  --jq-space-xl: 32px;
+  --jq-gutter-mobile: 16px;
+  --jq-gutter-tablet: 20px;
+  --jq-gutter-desktop: 24px;
+  --jq-panel-radius: 1rem;
+  --jq-panel-border-width: 2px;
+  --jq-content-max-width: 80rem;
+  --jq-touch-target: 44px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: var(--color-base-100);
+  color: var(--color-base-content);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-base-content);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.jq-skip-link {
+  position: absolute;
+  left: var(--jq-space-md);
+  top: var(--jq-space-md);
+  z-index: 100;
+  transform: translateY(-200%);
+}
+
+.jq-skip-link:focus,
+.jq-skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+.jq-panel {
+  border-width: var(--jq-panel-border-width);
+  border-radius: var(--jq-panel-radius);
+}
+
+.jq-touch-target {
+  min-height: var(--jq-touch-target);
+  min-width: var(--jq-touch-target);
+}
